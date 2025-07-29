@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h3 class="text-center">Interview Questions</h3>
+        </div>
+        <div class="card my-2" ng-repeat="q in questions">
+            <div class="card-body row align-items-center">
+                <div class="col-md-9 col-12 mb-2 mb-md-0">
+                    <strong>Q{{q.id}}:</strong> {{q.text}}
+                </div>
+                <div class="col-md-3 col-12 text-md-end text-center">
+                    <button class="btn btn-sm btn-outline-primary w-100" ng-click="toggleAnswer(q.id)">
+                        {{ isAnswerVisible(q.id) ? 'Hide Answer' : 'View Answer' }}
+                    </button>
+                </div>
+            </div>
+            <div class="card-footer bg-light" ng-show="isAnswerVisible(q.id)">
+                <p class="mb-0">{{ getAnswer(q.id) }}</p>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container mt-4">
+    <div class="card shadow">
+        <div class="card-header bg-success text-white">
+            <h3 class="text-center">Interview Answers</h3>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item" ng-repeat="a in answers">
+                <p><strong>Q{{ a.id }}:</strong> {{ getQuestionText(a.id) }}</p>
+                <p><strong>Ans:</strong> {{ a.answer }}</p>
+            </li>
+        </ul>
+    </div>
+</div>
